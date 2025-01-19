@@ -1,0 +1,124 @@
+.trust-section {
+  padding: 2rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.trust-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.trust-container h3 {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.logo-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: fit-content;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  padding: 0 2rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-item:hover {
+  opacity: 1;
+}
+
+.logo-item img {
+  height: 2.5rem;
+  width: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Gradient overlay for smooth scroll effect */
+.logo-scroll-container::before,
+.logo-scroll-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+
+.logo-scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+@media (max-width: 768px) {
+  .trust-section {
+    padding: 1.5rem 0;
+  }
+
+  .logo-item {
+    padding: 0 1.5rem;
+  }
+
+  .logo-item img {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .trust-container h3 {
+    font-size: 0.75rem;
+  }
+
+  .logo-item {
+    padding: 0 1rem;
+  }
+
+  .logo-item img {
+    height: 1.75rem;
+  }
+}

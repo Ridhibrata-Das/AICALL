@@ -1,0 +1,298 @@
+.role-selection {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 4rem 5%;
+  position: relative;
+}
+
+.role-selection-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header Styles */
+.role-selection h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+/* Role Cards Container */
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Role Card Styles */
+.role-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.role-card.selected {
+  border-color: var(--card-color);
+  box-shadow: 0 0 0 4px rgba(var(--card-color), 0.1);
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.role-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+}
+
+.role-card h2 {
+  font-size: 1.5rem;
+  color: var(--card-color);
+  margin-bottom: 1rem;
+}
+
+.role-description {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Benefits Cloud */
+.benefits-cloud {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  width: 90%;
+  z-index: 2;
+}
+
+.benefits-cloud:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+}
+
+.role-card:hover .benefits-cloud {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Responsibilities Section */
+.responsibilities {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.responsibilities h3 {
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.responsibilities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.responsibilities li {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.responsibilities li:before {
+  content: '•';
+  color: var(--card-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Select Role Button */
+.select-role-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--card-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-role-button:hover {
+  filter: brightness(110%);
+  transform: translateY(-2px);
+}
+
+/* Remember Selection Checkbox */
+.remember-selection {
+  margin-top: 2rem;
+}
+
+.remember-selection label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.remember-selection input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid #64748b;
+  cursor: pointer;
+}
+
+/* Help Button */
+.help-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.help-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -2px rgba(0, 0, 0, 0.1);
+}
+
+.help-icon {
+  width: 24px;
+  height: 24px;
+  color: #64748b;
+}
+
+/* Help Modal */
+.help-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.help-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.help-content h3 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.help-content p {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.help-content ul {
+  margin-bottom: 1.5rem;
+}
+
+.help-content li {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.close-help {
+  width: 100%;
+  padding: 0.75rem;
+  background: #e2e8f0;
+  border: none;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-help:hover {
+  background: #cbd5e1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .role-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .role-selection {
+    padding: 3rem 5%;
+  }
+
+  .role-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .role-selection h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .benefits-cloud {
+    display: none;
+  }
+}
